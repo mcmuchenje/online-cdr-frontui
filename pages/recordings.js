@@ -1,7 +1,7 @@
-import Head from 'next/head';
-import Link from 'next/link';
+import Head from 'next/head'
+import Link from 'next/link'
 
-export default function Home() {
+export default function Recordings() {
   return (
     
 <div>
@@ -16,7 +16,7 @@ export default function Home() {
             <div className="ml-10 flex items-baseline space-x-4">
              
               <Link href="/">
-                <a className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+                <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
               </Link>
 
               <Link href="/calls">
@@ -28,7 +28,7 @@ export default function Home() {
               </Link>
 
               <Link href="/recordings">
-                <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Recordings</a>
+                <a className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Recordings</a>
               </Link>
 
               <Link href="/reports">
@@ -87,13 +87,13 @@ export default function Home() {
     <div className="hidden md:hidden">
       <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
         
-        <a href="#" className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
+        <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
 
         <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calls</a>
 
         <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Extensions</a>
 
-        <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Recordings</a>
+        <a href="#" className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Recordings</a>
 
         <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Reports</a>
       </div>
@@ -128,7 +128,7 @@ export default function Home() {
   <header className="bg-white shadow">
     <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
       <h1 className="text-3xl font-bold leading-tight text-gray-900">
-        Dashboard
+        Recordings
       </h1>
     </div>
   </header>
@@ -150,25 +150,13 @@ export default function Home() {
                 Call Time
               </th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Caller ID
-              </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Source
               </th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Destination
               </th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Time (mins)
-              </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Status
-              </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Total
-              </th>
-              <th scope="col" className="relative px-6 py-3">
-                <span className="sr-only">Total</span>
+                Audio
               </th>
             </tr>
           </thead>
@@ -181,21 +169,12 @@ export default function Home() {
                 0867707150
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                0867707150
+                0772198816
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                221
-              </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                0.18
-              </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                  Answered
-                </span>
-              </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                $0
+                <audio controls>
+                  <source src="horse.ogg" type="audio/ogg"></source>
+                </audio>
               </td>
             </tr>
 

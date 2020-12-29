@@ -1,7 +1,7 @@
-import Head from 'next/head';
-import Link from 'next/link';
+import Head from 'next/head'
+import Link from 'next/link'
 
-export default function Home() {
+export default function Calls() {
   return (
     
 <div>
@@ -15,12 +15,12 @@ export default function Home() {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
              
-              <Link href="/">
-                <a className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+               <Link href="/">
+                <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
               </Link>
 
               <Link href="/calls">
-                <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calls</a>
+                <a className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Calls</a>
               </Link>
 
               <Link href="/extensions">
@@ -34,7 +34,6 @@ export default function Home() {
               <Link href="/reports">
                 <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Reports</a>
               </Link>
-
             </div>
           </div>
         </div>
@@ -87,15 +86,26 @@ export default function Home() {
     <div className="hidden md:hidden">
       <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
         
-        <a href="#" className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
+       <Link href="/">
+                <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+              </Link>
 
-        <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calls</a>
+              <Link href="/calls">
+                <a className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Calls</a>
+              </Link>
 
-        <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Extensions</a>
+              <Link href="/extensions">
+                <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Extensions</a>
+              </Link>
 
-        <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Recordings</a>
+              <Link href="/recordings">
+                <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Recordings</a>
+              </Link>
 
-        <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Reports</a>
+              <Link href="/reports">
+                <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Reports</a>
+              </Link>
+
       </div>
       <div className="pt-4 pb-3 border-t border-gray-700">
         <div className="flex items-center px-5">
@@ -128,7 +138,7 @@ export default function Home() {
   <header className="bg-white shadow">
     <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
       <h1 className="text-3xl font-bold leading-tight text-gray-900">
-        Dashboard
+        Calls
       </h1>
     </div>
   </header>

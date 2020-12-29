@@ -1,7 +1,7 @@
-import Head from 'next/head';
-import Link from 'next/link';
+import Head from 'next/head'
+import Link from 'next/link'
 
-export default function Home() {
+export default function Extensions() {
   return (
     
 <div>
@@ -14,9 +14,9 @@ export default function Home() {
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-             
+              
               <Link href="/">
-                <a className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+                <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
               </Link>
 
               <Link href="/calls">
@@ -24,7 +24,7 @@ export default function Home() {
               </Link>
 
               <Link href="/extensions">
-                <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Extensions</a>
+                <a className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Extensions</a>
               </Link>
 
               <Link href="/recordings">
@@ -34,7 +34,6 @@ export default function Home() {
               <Link href="/reports">
                 <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Reports</a>
               </Link>
-
             </div>
           </div>
         </div>
@@ -87,11 +86,11 @@ export default function Home() {
     <div className="hidden md:hidden">
       <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
         
-        <a href="#" className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
+        <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
 
         <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calls</a>
 
-        <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Extensions</a>
+        <a href="#" className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Extensions</a>
 
         <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Recordings</a>
 
@@ -128,7 +127,7 @@ export default function Home() {
   <header className="bg-white shadow">
     <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
       <h1 className="text-3xl font-bold leading-tight text-gray-900">
-        Dashboard
+        Extensions
       </h1>
     </div>
   </header>
@@ -147,55 +146,36 @@ export default function Home() {
           <thead className="bg-gray-50">
             <tr>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Call Time
+                Name
               </th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Caller ID
+                Email
               </th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Source
-              </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Destination
-              </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Time (mins)
+                Extension
               </th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Status
-              </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Total
-              </th>
-              <th scope="col" className="relative px-6 py-3">
-                <span className="sr-only">Total</span>
               </th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
             <tr>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                Tue Dec 29 2020 12:59:15
+                Switchboard
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                0867707150
+                <div class="text-sm text-gray-500">
+                      jane.cooper@example.com
+                    </div>
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                0867707150
+                0772198816
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                221
-              </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                0.18
-              </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                  Answered
+                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                  Active
                 </span>
-              </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                $0
               </td>
             </tr>
 
