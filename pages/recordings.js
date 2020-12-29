@@ -1,7 +1,17 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import moment from 'moment';
 
-export default function Recordings() {
+export async function getServerSideProps() {
+  
+  const res = await fetch(`http://demo.voice.munyac.com/api/calls`)
+  const data = await res.json()
+
+  return { props: { data } }
+}
+
+
+export default function Recordings({ data }) {
   return (
     
 <div>
@@ -161,9 +171,13 @@ export default function Recordings() {
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
+            
+            { data.calls.map((call) => (
+
             <tr>
+
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                Tue Dec 29 2020 12:59:15
+                { moment(call.calldate).format('LLLL') }
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                 0867707150
@@ -177,6 +191,8 @@ export default function Recordings() {
                 </audio>
               </td>
             </tr>
+
+            ))}
 
           </tbody>
         </table>
