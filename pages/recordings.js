@@ -180,14 +180,14 @@ export default function Recordings({ data }) {
                 { moment(call.calldate).format('LLLL') }
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                0867707150
+                { call.src }
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                0772198816
+                { call.dst }
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                 <audio controls>
-                  <source src="horse.ogg" type="audio/ogg"></source>
+                  <source src={"/recordings/" + call.rec_name + ".wav"} type="audio/wav"></source>
                 </audio>
               </td>
             </tr>
