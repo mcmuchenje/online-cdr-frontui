@@ -157,7 +157,6 @@ export default function Calls({ data }) {
       <div className="px-4 py-6 sm:px-0">
         <div className="border-4 border border-gray-200 rounded-lg h-96">
 
-
 <div className="flex flex-col">
   <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
     <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -234,7 +233,7 @@ export default function Calls({ data }) {
                 ((call.RemoteIP === '172.16.12.39' || call.RemoteIP === '41.216.127.214') & call.disposition === 'ANSWERED' ) ?
                 ((call.billsec / 60) * 0.85).toFixed(2)
                 :
-                null
+                0
               }
               </td>
             </tr>
