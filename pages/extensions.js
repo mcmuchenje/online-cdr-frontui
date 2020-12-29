@@ -1,7 +1,20 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
-export default function Extensions() {
+export async function getStaticProps() {
+
+  const res = await fetch('http://demo.voice.munyac.com/api/extension')
+  const data = await res.json()
+
+  return {
+    props: {
+      data,
+    },
+  }
+}
+
+
+export default function Extensions({ data }) {
   return (
     
 <div>
@@ -160,17 +173,19 @@ export default function Extensions() {
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
+
+          { data.sip.map((sip) => (
             <tr>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                Switchboard
+                {sip.name}
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                 <div class="text-sm text-gray-500">
-                      jane.cooper@example.com
-                    </div>
+                  daniel.mafukidze@willdale.co.zw
+                </div>
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                0772198816
+                { sip.extension }
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                 <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
@@ -178,6 +193,7 @@ export default function Extensions() {
                 </span>
               </td>
             </tr>
+            ))}
 
           </tbody>
         </table>

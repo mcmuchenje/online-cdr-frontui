@@ -1,7 +1,16 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import moment from 'moment';
 
-export default function Calls() {
+export async function getServerSideProps() {
+  
+  const res = await fetch(`http://demo.voice.munyac.com/api/calls`)
+  const data = await res.json()
+
+  return { props: { data } }
+}
+
+export default function Calls({ data }) {
   return (
     
 <div>
@@ -175,7 +184,7 @@ export default function Calls() {
                 Status
               </th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Total
+                Total $
               </th>
               <th scope="col" className="relative px-6 py-3">
                 <span className="sr-only">Total</span>
@@ -183,31 +192,55 @@ export default function Calls() {
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
+
+          { data.calls.map((call) => (
+        
             <tr>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                Tue Dec 29 2020 12:59:15
+                {moment(call.calldate).format('LLLL')}
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                0867707150
+                { call.clid }
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                0867707150
+                { call.src }
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                221
+                { call.dst }
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                0.18
+                { (call.billsec / 60).toFixed(2) }
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              {
+                ((call.RemoteIP === '172.16.12.39' || call.RemoteIP === '41.216.127.214') & call.disposition === 'ANSWERED' ) ?
                 <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                  Answered
+                    Answered
                 </span>
+                : (call.disposition === 'ANSWERED') ?
+                <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
+                    Internal
+                </span>
+                :
+                <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                    Not Answered
+                </span>
+
+              }
+              
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                $0
+              {
+                ((call.RemoteIP === '172.16.12.39' || call.RemoteIP === '41.216.127.214') & call.disposition === 'ANSWERED' ) ?
+                ((call.billsec / 60) * 0.85).toFixed(2)
+                :
+                null
+              }
               </td>
             </tr>
+
+             ))}
+
 
           </tbody>
         </table>
